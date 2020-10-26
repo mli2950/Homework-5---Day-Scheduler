@@ -9,6 +9,10 @@
 
 ## Links
 
-[Live Webpage]()
+[Live Webpage](https://mli2950.github.io/Homework-5---Day-Scheduler/) <br/>
 [My Repository](https://github.com/mli2950/Homework-5---Day-Scheduler)
+
+## Screenshots
+
+![Home Page](Scheduler.png "Home Page")
 
