@@ -2,6 +2,8 @@ var m = moment();
 
 $("#currentDay").text(m.format("LLL"));
 
+// On click event listeners for each button
+
 // 9 Am button
 $("#9").click(function (event) {
     event.preventDefault(); 
@@ -148,7 +150,9 @@ $("#fiveInputDisplay").val(localStorage.getItem("17"))
 
 
 
+// Code to change each time block to the proper color for past, present, and future
 $(".description").each(function (index, value) {
+    
     var thisHour = $(this).attr("data-hour");
     
     if (thisHour < moment().hour()) {
