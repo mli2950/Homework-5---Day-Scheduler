@@ -3,7 +3,7 @@ var m = moment();
 $("#currentDay").text(m.format("LLL"));
 
 // 9 Am button
-$("#nine").click(function (event) {
+$("#9").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -16,10 +16,10 @@ $("#nine").click(function (event) {
         }
     });
 });
-$("#nineInputDisplay").val(localStorage.getItem("nine"))
+$("#nineInputDisplay").val(localStorage.getItem("9"))
 
 // 10 AM button
-$("#ten").click(function (event) {
+$("#10").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -32,10 +32,10 @@ $("#ten").click(function (event) {
         }
     });
 });
-$("#tenInputDisplay").val(localStorage.getItem("ten"))
+$("#tenInputDisplay").val(localStorage.getItem("10"))
 
 // 11 AM button
-$("#eleven").click(function (event) {
+$("#11").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -48,11 +48,11 @@ $("#eleven").click(function (event) {
         }
     });
 });
-$("#elevenInputDisplay").val(localStorage.getItem("eleven"))
+$("#elevenInputDisplay").val(localStorage.getItem("11"))
 
 // 12 PM button
-$("#twelve").click(function (event) {
-    event.preventDefault(); 
+$("#12").click(function (event) {
+    event.preventDefault();
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
         if (button === $(element).attr("data-hour")) {
@@ -64,10 +64,10 @@ $("#twelve").click(function (event) {
         }
     });
 });
-$("#twelveInputDisplay").val(localStorage.getItem("twelve"))
+$("#twelveInputDisplay").val(localStorage.getItem("12"))
 
 // 1 PM button
-$("#one").click(function (event) {
+$("#13").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -80,10 +80,10 @@ $("#one").click(function (event) {
         }
     });
 });
-$("#oneInputDisplay").val(localStorage.getItem("one"))
+$("#oneInputDisplay").val(localStorage.getItem("13"))
 
 // 2 PM button
-$("#two").click(function (event) {
+$("#14").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -96,10 +96,10 @@ $("#two").click(function (event) {
         }
     });
 });
-$("#twoInputDisplay").val(localStorage.getItem("two"))
+$("#twoInputDisplay").val(localStorage.getItem("14"))
 
 // 3 PM button
-$("#three").click(function (event) {
+$("#15").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -112,10 +112,10 @@ $("#three").click(function (event) {
         }
     });
 });
-$("#threeInputDisplay").val(localStorage.getItem("three"))
+$("#threeInputDisplay").val(localStorage.getItem("15"))
 
 // 4 PM button
-$("#four").click(function (event) {
+$("#16").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -128,10 +128,10 @@ $("#four").click(function (event) {
         }
     });
 });
-$("#fourInputDisplay").val(localStorage.getItem("four"))
+$("#fourInputDisplay").val(localStorage.getItem("16"))
 
-// 4 PM button
-$("#five").click(function (event) {
+// 5 PM button
+$("#17").click(function (event) {
     event.preventDefault(); 
     var button = $(this).attr("id"); 
     $(".description").each(function (i, element) {
@@ -144,5 +144,18 @@ $("#five").click(function (event) {
         }
     });
 });
-$("#fiveInputDisplay").val(localStorage.getItem("five"))
+$("#fiveInputDisplay").val(localStorage.getItem("17"))
 
+
+
+$(".description").each(function (index, value) {
+    var thisHour = $(this).attr("data-hour");
+    
+    if (thisHour < moment().hour()) {
+        $(this).addClass("past");
+    } else if (thisHour == moment().hour()) {
+        $(this).addClass("present");
+    } else if (thisHour > moment().hour()) {
+        $(this).addClass("future");
+    }
+})
